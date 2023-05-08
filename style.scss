@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap');
+
+html {
+    box-sizing: border-box;   
+
+    body {        
+        margin: 0;
+        min-height: 100vh;
+        font-family: Oswald, sans-sherif;
+        background-color: #FFF;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+        display: flex;
+        justify-content: center;    
+
+        .container {
+            width: 850px;
+
+            h1 {
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 15px;
+                font-size: 40px;
+                letter-spacing: 5px;
+                color: #070602;
+            }
+            p {
+                text-align: center;
+            } 
+
+            /* RadioBox */
+            ul
+            {
+                display:flex;  
+                list-style:none;
+                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 0;
+                padding: 0.8rem 1rem;
+                list-style-type:none;
+                gap: 0.45rem;
+
+                li {          
+                    label, input {                   
+                        color: #767676;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;                                                
+                        transition: 0.5s; 
+                        cursor:pointer;
+                        &:hover {
+                            color: #000;
+                        }                    
+                    }
+                    input[type="radio"] {
+                        display: none;
+                        &:checked + label {
+                            color: #000;
+                            text-decoration-line: underline;
+                            text-underline-position: under;
+                            text-decoration-thickness: 0.25rem;
+                        }   
+                    }   
+                }
+            }
+
+            /* Search Bar */
+            .search-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.8rem 1rem;
+
+                input[type="text"], textarea {                    
+                    border-radius: 5rem;
+                    border: 1px solid #fff;
+                    outline: none;
+                    width: 13rem;
+                    height: 2.5rem; 
+                    padding: 0 1rem 0 2.25rem;
+                    background-color: #EEEEEE;
+                    color: #a1a1a1;
+                    transition: 0.5s;
+                    
+                    &:focus {
+                        border-color: inherit;
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                        border: 1px solid #888888;
+                        background-color: #FFF;                        
+                    }
+                }  
+                i {
+                    position: absolute;
+                    margin-right: 13.5rem;
+                    color: #767676;
+                }
+            }
+
+            /*Image Container */
+            .image-container {
+                img {
+                    width: 100%;
+                    margin-top: 25px;
+
+                    &:hover {
+                        transform: scale(1.015);
+                        transition: transform .5s;
+                    }
+                }
+            }
+
+            /* Loader */
+            .loader {
+                display: none;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .loader img {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /* To top Button*/
+            .top-button {
+                display: flex;
+                align-items: center;
+                justify-content: center; 
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                z-index: 99;      
+                height: 1.5rem;
+                width: 1.5rem;
+                font-size: 1.25rem;                                          
+                padding: 1rem;
+                border-radius: 5rem;
+                border: 2px solid #767676;   
+                color: #767676;             
+                transition: 0.5s;
+                cursor: pointer;
+                &:hover {
+                    border-color: #000; 
+                    color: #000;
+                }
+            }    
+        }
+    }
+}
+
+
+/* Media Query: Large Smartphone */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+    .image-container {
+        margin: 10px;
+    }
+}

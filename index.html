@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Title -->
+        <h1>Unsplash API - Infinite Scroll</h1>
+        <p>[Warning] API only allows 50 requests per hour</p>
+        <!-- Loader -->
+        <div class="loader" id="loader">
+            <img src ="loader.svg" alt="loading">
+        </div>
+        <!-- Filter -->
+        <ul class="photos-selection">
+            <li>
+                <input type="radio" id="nature" name="category" value="nature"/>
+                <label for="nature">nature</label>
+            </li>
+            <li>
+                <input type="radio" id="street-photography" name="category" value="street-photography"/>
+                <label for="street-photography">street photography</label>
+            </li>
+            <li>
+                <input type="radio" id="textures-patterns" name="category" value="textures-patterns"/>
+                <label for="textures-patterns">textures patterns</label>
+            </li>
+            <li>
+                <input type="radio" id="animals" name="category" value="animals"/>
+                <label for="animals">animals</label>
+            </li>
+            <li>
+                <input type="radio" id="people" name="category" value="people"/>
+                <label for="people">people</label>
+            </li>
+            <li>
+                <input type="radio" id="arts-culture" name="category" value="arts-culture"/>
+                <label for="arts-culture">arts culture</label>
+            </li>            
+            <li>
+                <input type="radio" id="all" name="category" value=""/>
+                <label for="all">all</label>
+            </li>
+        </ul>        
+        <!-- Filter Search Bar -->
+        <div class="search-container" id="search-container">
+            <i class="fas fa-search"></i><input type="text" placeholder="Search.." name="search">
+        </div>
+        <!-- Image Container -->
+        <div class="image-container" id="image-container"></div>            
+        <!-- To Top Button -->
+        <div id="top-button" class="top-button">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
